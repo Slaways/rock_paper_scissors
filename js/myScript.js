@@ -2,6 +2,27 @@
 let computerSelection;
 let playerSelection;
 let wynik;
+const hwybor = document.querySelector('#hwybor');
+const hwynik = document.querySelector('#hwynik');
+
+
+const p = document.createElement("P");
+p.textContent = "WYNIK";
+p.style.cssText = "color: black; text-align: center;"
+
+hwynik.appendChild(p);
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) =>{
+    button.addEventListener('click', () =>{
+        playerSelection = button.id;
+        alert(playerSelection);
+        game();
+    });
+});
+
+
+
 function computerPlay(){
     let min=1;
     let max=4;
@@ -17,16 +38,17 @@ function computerPlay(){
             computerSelection = "scissors"
             break;
     }
+    console.log("random: " + random)
     computerSelection = computerSelection.toUpperCase();
 }
-function playerPlay(){
-    playerSelection = prompt("Papier, Kamien, Nozyce?");
-    playerSelection= playerSelection.toUpperCase();    
-}
+
+
+
+
 function rockPaperScissors(){
     if(computerSelection===playerSelection){
         wynik="remis";
-    }else if(computerSelection === "PAPER" && playerSelection === "SICSSORS"){
+    }else if(computerSelection === "PAPER" && playerSelection === "SCISSORS"){
         wynik="gracz wygral";
     }else if(computerSelection === "PAPER" && playerSelection === "ROCK"){
         wynik="komputer wygral";
@@ -40,11 +62,13 @@ function rockPaperScissors(){
         wynik="gracz wygral";
     }
 }
+
+
+
 function game(){
     let wynikGracza = 0;
     let wynikKomputera =0;
-    for(let i = 0; i < 5; i++){
-        playerPlay();
+    for(let i = 0; i < 1; i++){
         computerPlay();
         rockPaperScissors();
         if(wynik === "gracz wygral"){
@@ -52,8 +76,11 @@ function game(){
         }else if(wynik === "komputer wygral"){
             wynikKomputera++;
         };
-        alert("Gracz : " + wynikGracza + "  Komputer : " + wynikKomputera )
+        console.log("Gracz : " + wynikGracza + "  Komputer : " + wynikKomputera )
     }
-    alert("Wynik koncowy \n Gracz : " + wynikGracza + "   Komputer : " + wynikKomputera)
+    console.log("Wynik koncowy \n Gracz : " + wynikGracza + "   Komputer : " + wynikKomputera)
 }
-game();
+
+
+
+

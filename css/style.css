@@ -1,0 +1,23 @@
+/* CSS */
+button {
+    width: 100px;
+    height: 100px;
+}
+body{
+    background: rgb(0,255,252);
+    background: linear-gradient(90deg, rgba(0,255,252,1) 0%, rgba(121,9,113,1) 48%, rgba(255,0,0,1) 100%);
+}
+button{
+    margin: 50px;
+    border-radius: 20%;
+    background-color: whitesmoke;
+}
+.wybor{
+    position: relative;
+    text-align: center;
+}
+.tojest{
+    font-size: 35px;
+    font-style: italic;
+    font-family: 'Roboto Mono', monospace;
+}
