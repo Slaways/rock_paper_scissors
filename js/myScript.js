@@ -2,13 +2,28 @@
 let computerSelection;
 let playerSelection;
 let wynik;
+let wynikGracza=0;
+let wynikKomputera=0;
+let wynikGraczak=0;
+let wynikKomputerak=0;
+
 const hwybor = document.querySelector('#hwybor');
 const hwynik = document.querySelector('#hwynik');
+const hwynik_koncowy = document.querySelector('#hwynik_koncowy');
 
 
 const p = document.createElement("P");
 p.textContent = "WYNIK";
 p.style.cssText = "color: black; text-align: center;"
+
+const p0 = document.createElement("P");
+p0.style.cssText = "color: black; text-align: center;"
+
+const p2 = document.createElement("P");
+p2.style.cssText = "color: black; text-align: center;"
+
+const p3 = document.createElement("P");
+p3.style.cssText = "color: black; text-align: center;"
 
 hwynik.appendChild(p);
 
@@ -16,7 +31,6 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) =>{
     button.addEventListener('click', () =>{
         playerSelection = button.id;
-        alert(playerSelection);
         game();
     });
 });
@@ -68,17 +82,24 @@ function rockPaperScissors(){
 function game(){
     let wynikGracza = 0;
     let wynikKomputera =0;
-    for(let i = 0; i < 1; i++){
         computerPlay();
         rockPaperScissors();
         if(wynik === "gracz wygral"){
             wynikGracza++;
+            wynikGraczak++;
         }else if(wynik === "komputer wygral"){
             wynikKomputera++;
+            wynikKomputerak++
         };
-        console.log("Gracz : " + wynikGracza + "  Komputer : " + wynikKomputera )
-    }
+    console.log("Gracz : " + wynikGracza + "  Komputer : " + wynikKomputera )
     console.log("Wynik koncowy \n Gracz : " + wynikGracza + "   Komputer : " + wynikKomputera)
+
+    p2.textContent = "Gracz : " + wynikGracza + "   Komputer : " + wynikKomputera;
+    hwynik.appendChild(p2);
+    
+    p3.textContent = "Wynik koncowy \n Gracz : " + wynikGraczak + "   Komputer : " + wynikKomputerak;
+    hwynik_koncowy.appendChild(p3);
+    
 }
 
 
