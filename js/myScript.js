@@ -36,7 +36,7 @@ buttons.forEach((button) =>{
 });
 
 
-
+//Wybór komputera
 function computerPlay(){
     let min=1;
     let max=4;
@@ -59,6 +59,7 @@ function computerPlay(){
 
 
 
+//Rozstrzygnięcie komputer vs użytkownik
 function rockPaperScissors(){
     if(computerSelection===playerSelection){
         wynik="remis";
@@ -78,7 +79,7 @@ function rockPaperScissors(){
 }
 
 
-
+//Gra, wybor gracza/komputera oraz zapis wyników
 function game(){
     let wynikGracza = 0;
     let wynikKomputera =0;

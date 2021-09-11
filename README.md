@@ -1,1 +1,1 @@
-Gra papier, kamien, nozyce.
+Gra papier, kamien, nozyce. JS/CSS/HTML
